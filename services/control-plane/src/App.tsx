@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import { DndContext, closestCorners} from "@dnd-kit/core";
+import { Column } from "./components/Column/Column";
+import { arrayMove } from "@dnd-kit/sortable";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [tasks, setTask] = useState<Array<{ id: number; title: string }>>([
+    { id: 1, title: "In progress" },
+    { id: 2, title: "In work" },
+    { id: 3, title: "All done" },
+  ]);
+
+  const getTaskPos = (id:number):number => tasks.findIndex(tasks => tasks.id === id);
+
+  const handleDragEnd = (event) => {
+    const {active, over} = event;
+    if (active.id === over.id) return;
+
+    setTask(tasks => {
+      const originalPos = getTaskPos(active.id);
+      const newPost = getTaskPos(over.id);
+
+      return arrayMove(tasks, originalPos, newPost);
+    })
+  }
 
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <h1>Kanban</h1>
+        <DndContext collisionDetection={closestCorners} onDragEnd={handleDragEnd}>
+          <Column tasks={tasks}></Column>
+        </DndContext>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
