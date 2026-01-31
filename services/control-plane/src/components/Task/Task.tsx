@@ -1,6 +1,7 @@
 import React from "react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
+import "./Task.css";
 
 export const Task = ({ id, title }: { id: number; title: string }) => {
   const { attributes, listeners, setNodeRef, transform, transition } =
@@ -12,7 +13,13 @@ export const Task = ({ id, title }: { id: number; title: string }) => {
   };
 
   return (
-    <div ref={setNodeRef} {...attributes} {...listeners} style={style}>
+    <div
+      ref={setNodeRef}
+      {...attributes}
+      {...listeners}
+      style={style}
+      className="task"
+    >
       {title}
     </div>
   );
