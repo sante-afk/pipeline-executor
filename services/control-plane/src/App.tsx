@@ -1,15 +1,29 @@
 import { useState } from "react";
 import "./App.css";
-import { DndContext, closestCorners, DragEndEvent } from "@dnd-kit/core";
+import {
+  DndContext,
+  KeyboardSensor,
+  PointerSensor,
+  TouchSensor,
+  closestCorners,
+  useSensors,
+  useSensor,
+  type DragEndEvent,
+} from "@dnd-kit/core";
+import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 import { Column } from "./components/Column/Column";
-import { arrayMove } from "@dnd-kit/sortable";
+import { Input } from "./components/Input/Input";
 
 function App() {
   const [tasks, setTask] = useState<Array<{ id: number; title: string }>>([
-    { id: 1, title: "In progress" },
-    { id: 2, title: "In work" },
-    { id: 3, title: "All done" },
+    { id: 1, title: "Task1" },
+    { id: 2, title: "Task2" },
+    { id: 3, title: "Task3" },
   ]);
+
+  const addTask = (title: string): void => {
+    setTask((tasks) => [...tasks, { id: tasks.length + 1, title }]);
+  };
 
   const getTaskPos = (id: number | string): number =>
     tasks.findIndex((tasks) => tasks.id === id);
@@ -26,14 +40,24 @@ function App() {
     });
   };
 
+  const sensor = useSensors(
+    useSensor(PointerSensor),
+    useSensor(TouchSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    }),
+  );
+
   return (
     <>
-      <div>
+      <div className="App">
         <h1>Kanban</h1>
         <DndContext
+          sensors={sensor}
           collisionDetection={closestCorners}
           onDragEnd={handleDragEnd}
         >
+          <Input onSubmit={addTask} />
           <Column tasks={tasks}></Column>
         </DndContext>
       </div>
