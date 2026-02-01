@@ -20,9 +20,9 @@ export const Input = ({ onSubmit }: InputProps) => {
   };
 
   return (
-    <div className="container">
+    <div
+      className="inputContainer">
       <input
-        className="input"
         type="text"
         value={input}
         onChange={handleChange}
