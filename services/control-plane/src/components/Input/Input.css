@@ -8,14 +8,16 @@ input {
   background-color: #1a1a1a;
   color: white;
   cursor: pointer;
+  width: 250px;
   transition: border-color 0.25s;
 }
 
-.container {
+.inputContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 20px;
+  gap: 30px;
   flex-direction: column;
+  margin-bottom: 40px;
 }
 
 button {
