@@ -17,6 +17,9 @@ pipeline-executor/
 │  │  │  │  ├─ Task/
 │  │  │  │  │  ├─ Task.css
 │  │  │  │  │  ├─ Task.tsx
+│  │  │  ├─ Types/
+│  │  │  │  │  ├─ column.ts
+│  │  │  │  │  ├─ task.ts
 │  │  │  ├─ App.css
 │  │  │  ├─ App.tsx
 │  │  │  ├─ index.css
