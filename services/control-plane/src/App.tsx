@@ -15,7 +15,7 @@ import { Column } from "./components/Column/Column";
 import { Input } from "./components/Input/Input";
 import { HBox } from "./components/Layouts/HBox";
 import { VBox } from "./components/Layouts/VBox";
-import { type ColumnType } from "./Types/column";
+import { type ColumnType } from "./types/column";
 
 function App() {
   const [columns, setColumns] = useState<ColumnType[]>([

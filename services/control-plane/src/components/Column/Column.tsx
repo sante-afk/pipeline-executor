@@ -4,7 +4,7 @@ import {
 } from "@dnd-kit/sortable";
 import "./Column.css";
 import { Task } from "../Task/Task";
-import { type ColumnType } from "../../Types/column";
+import { type ColumnType } from "../../types/column";
 
 type Props = {
   column: ColumnType;
