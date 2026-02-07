@@ -63,4 +63,76 @@ pipeline-executor/
 │  │  ├─ vite.config.ts
 │  ├─ data-store/
 │  ├─ pipeline-executor/
+│  │  ├─ .gradle/
+│  │  │  ├─ 9.3.0/
+│  │  │  │  ├─ checksums/
+│  │  │  │  │  ├─ checksums.lock
+│  │  │  │  │  ├─ md5-checksums.bin
+│  │  │  │  │  ├─ sha1-checksums.bin
+│  │  │  │  ├─ executionHistory/
+│  │  │  │  │  ├─ executionHistory.bin
+│  │  │  │  │  ├─ executionHistory.lock
+│  │  │  │  ├─ expanded/
+│  │  │  │  ├─ fileChanges/
+│  │  │  │  │  ├─ last-build.bin
+│  │  │  │  ├─ fileHashes/
+│  │  │  │  │  ├─ fileHashes.bin
+│  │  │  │  │  ├─ fileHashes.lock
+│  │  │  │  │  ├─ resourceHashesCache.bin
+│  │  │  │  ├─ vcsMetadata/
+│  │  │  │  ├─ gc.properties
+│  │  │  ├─ buildOutputCleanup/
+│  │  │  │  ├─ buildOutputCleanup.lock
+│  │  │  │  ├─ cache.properties
+│  │  │  │  ├─ outputFiles.bin
+│  │  │  ├─ vcs-1/
+│  │  │  │  ├─ gc.properties
+│  │  │  ├─ file-system.probe
+│  │  ├─ .idea/
+│  │  │  ├─ .gitignore
+│  │  │  ├─ compiler.xml
+│  │  │  ├─ gradle.xml
+│  │  │  ├─ misc.xml
+│  │  │  ├─ vcs.xml
+│  │  │  ├─ workspace.xml
+│  │  ├─ build/
+│  │  │  ├─ classes/
+│  │  │  │  ├─ java/
+│  │  │  │  │  ├─ main/
+│  │  │  │  │  │  ├─ com/
+│  │  │  │  │  │  │  ├─ example/
+│  │  │  │  │  │  │  │  ├─ pipelineexecutor/
+│  │  │  │  │  │  │  │  │  ├─ PipelineExecutorApplication.class
+│  │  │  ├─ generated/
+│  │  │  │  ├─ sources/
+│  │  │  │  │  ├─ annotationProcessor/
+│  │  │  │  │  │  ├─ java/
+│  │  │  │  │  │  │  ├─ main/
+│  │  │  │  │  ├─ headers/
+│  │  │  │  │  │  ├─ java/
+│  │  │  │  │  │  │  ├─ main/
+│  │  │  ├─ resources/
+│  │  │  │  ├─ main/
+│  │  │  │  │  ├─ static/
+│  │  │  │  │  ├─ templates/
+│  │  │  │  │  ├─ application.properties
+│  │  │  ├─ tmp/
+│  │  │  │  ├─ compileJava/
+│  │  │  │  │  ├─ previous-compilation-data.bin
+│  │  ├─ src/
+│  │  │  ├─ main/
+│  │  │  │  ├─ java/
+│  │  │  │  │  ├─ com/
+│  │  │  │  │  │  ├─ example/
+│  │  │  │  │  │  │  ├─ pipelineexecutor/
+│  │  │  │  │  │  │  │  ├─ controller/
+│  │  │  │  │  │  │  │  │  ├─ PipelineExecutorController.java
+│  │  │  │  │  │  │  │  ├─ model/
+│  │  │  │  │  │  │  │  │  ├─ User.java
+│  │  │  │  │  │  │  │  ├─ repository/
+│  │  │  │  │  │  │  │  ├─ service/
+│  │  │  │  ├─ resources/
+│  │  │  │  │  ├─ static/
+│  │  │  │  │  ├─ templates/
+│  │  ├─ HELP.md
 ```
