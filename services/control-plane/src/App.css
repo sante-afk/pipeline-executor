@@ -1,7 +1,6 @@
 body {
-  background-color: #cecece;
+  background-color: #242424;
 }
-
 .App {
   width: 100%;
   height: 100%;
@@ -11,9 +10,20 @@ body {
   gap: 50px;
   margin-top: 10px;
 }
-
+.profileContainer {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.profileButton {
+  margin: 10px;
+  width: 100px;
+  height: 30px;
+  background: none;
+  align-items: center;
+}
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 30px;
 }

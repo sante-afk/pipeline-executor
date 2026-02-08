@@ -1,0 +1,15 @@
+.column {
+  background-color: black;
+  border-radius: 5px;
+  padding: 15px;
+  width: 250px;
+  height: 400px;
+  max-width: 250px;
+  max-height: 400px;
+  overflow-x: hidden;
+  overflow-y: visible;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: rgb(0, 0, 0);
+}
