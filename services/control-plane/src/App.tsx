@@ -111,20 +111,20 @@ function App() {
           <VBox>
             <Input onSubmit={addTask} />
             <div className="container">
-              <VBox>
+              <HBox>
                 <h2>In Progress</h2>
                 <Column column={columns[0]}></Column>
-              </VBox>
+              </HBox>
 
-              <VBox>
+              <HBox>
                 <h2>In Work</h2>
                 <Column column={columns[1]}></Column>
-              </VBox>
+              </HBox>
 
-              <VBox>
+              <HBox>
                 <h2>Is Done</h2>
                 <Column column={columns[2]}></Column>
-              </VBox>
+              </HBox>
             </div>
           </VBox>
         </DndContext>

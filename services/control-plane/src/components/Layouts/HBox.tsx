@@ -5,10 +5,8 @@ export const HBox = ({ children }: { children: React.ReactNode }) => {
     <div
       style={{
         display: "flex",
-        flexDirection: "row",
-        justifyContent: "flex-start",
+        flexDirection: "column",
         alignItems: "center",
-        gap: "10px",
       }}
     >
       {children}
