@@ -16,6 +16,8 @@ import { Input } from "./components/Input/Input";
 import { HBox } from "./components/Layouts/HBox";
 import { VBox } from "./components/Layouts/VBox";
 import { type ColumnType } from "./types/column";
+import StoragePage from "./components/DataStorage/StoragePage";
+import Profile from "./components/Profile/Profile";
 
 function App() {
   const [columns, setColumns] = useState<ColumnType[]>([
@@ -31,11 +33,7 @@ function App() {
     {
       id: 1,
       title: "Work Task",
-      tasks: [
-        { id: 3, title: "task4" },
-        { id: 4, title: "task5" },
-        { id: 5, title: "task6" },
-      ],
+      tasks: [],
     },
     {
       id: 2,
@@ -101,32 +99,37 @@ function App() {
 
   return (
     <>
+      <div className="profileContainer">
+        <Profile />
+        <button className="profileButton">profile</button>
+      </div>
+
       <div className="App">
-        <h1>Kanban</h1>
+        <h1>Control plane</h1>
         <DndContext
           sensors={sensor}
           collisionDetection={closestCorners}
           onDragEnd={handleDragEnd}
         >
-          <VBox>
-            <Input onSubmit={addTask} />
-            <div className="container">
-              <HBox>
-                <h2>In Progress</h2>
-                <Column column={columns[0]}></Column>
-              </HBox>
-
-              <HBox>
-                <h2>In Work</h2>
-                <Column column={columns[1]}></Column>
-              </HBox>
-
-              <HBox>
-                <h2>Is Done</h2>
-                <Column column={columns[2]}></Column>
-              </HBox>
-            </div>
-          </VBox>
+          <Input onSubmit={addTask} />
+          <div className="container">
+            <HBox>
+              <h2>Data store</h2>
+              <StoragePage />
+            </HBox>
+            <HBox>
+              <h2>In Progress</h2>
+              <Column column={columns[0]}></Column>
+            </HBox>
+            <HBox>
+              <h2>In Work</h2>
+              <Column column={columns[1]}></Column>
+            </HBox>
+            <HBox>
+              <h2>Is Done</h2>
+              <Column column={columns[2]}></Column>
+            </HBox>
+          </div>
         </DndContext>
       </div>
     </>

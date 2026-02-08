@@ -1,6 +1,7 @@
 import { useState, type ChangeEvent } from "react";
 
 import "./Input.css";
+import { Button } from "@mui/material";
 
 type InputProps = {
   onSubmit: (value: string) => void;
